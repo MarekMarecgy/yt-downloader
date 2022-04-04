@@ -5,12 +5,6 @@ from pydub import AudioSegment
 import os
 import glob
 
-print(asciiart)
-
-if os.path.isdir('./Downloaded') == False:
-    os.mkdir('./Downloaded')
-if os.path.isdir('./Processing') == False:
-    os.mkdir('./Processing')
 
 def downloader():
     adr = input(str("wklej adres url filmiku który Cię interesuje -> "))
@@ -36,10 +30,22 @@ def downloader():
     print("\n\n Pobieranie Ukończone ||| Pliki mp3 znajdziesz w folderze Downloaded")
 
 
-print("Chcesz pobrać jeden(1) czy więcej utworów(2) ? ")
-answ1 = input("Wybierz 1 lub 2 ---->>>: ")
+def ytdl():
+    print("Chcesz pobrać jeden(1) czy więcej utworów(2) ? ")
+    answ1 = input("Wybierz 1 lub 2 ---->>>: ")
 
-if answ1 == "1":
-    downloader()
-elif answ1 == "2":
-    multidownloader()
+    if answ1 == "1":
+        downloader()
+    elif answ1 == "2":
+        multidownloader()
+
+
+print(asciiart)
+
+if not os.path.isdir('./Downloaded'):
+    os.mkdir('./Downloaded')
+if not os.path.isdir('./Processing'):
+    os.mkdir('./Processing')
+
+ytdl()
+input()

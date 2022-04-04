@@ -7,7 +7,7 @@ import glob
 
 def multidownloader():
     tabela = PrettyTable()
-    tabela.field_names = ["Song Name's"]
+    tabela.field_names = ["Songs Name's"]
     ytlist = []
     przelacznik = True
 
